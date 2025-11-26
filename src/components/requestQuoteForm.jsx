@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { X, Mail, Phone, User, Building, Package } from 'lucide-react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import '../assets/styles/RequestQuoteForm.css';
+import '../assets/styles/requestQuoteForm.css';
 
 const GetQuoteModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
