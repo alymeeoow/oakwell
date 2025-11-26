@@ -1,0 +1,558 @@
+
+
+body.modal-open {
+    overflow: hidden !important;
+
+    width: 100% !important;
+    height: 100% !important;
+}
+
+
+body.modal-open {
+    padding-right: var(--scrollbar-width, 0px);
+}
+
+
+.get-quote-modal-overlay {
+    --scrollbar-width: calc(100vw - 100%);
+}
+
+
+.get-quote-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.get-quote-modal {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow: hidden;
+    overflow-y: auto;
+    animation: getQuoteModalSlideIn 0.3s ease-out;
+    z-index: 10001;
+    position: relative;
+    border: 1px solid #e5e7eb;
+}
+
+.get-quote-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 28px 32px 24px;
+    border-bottom: 1px solid #f1f5f9;
+    background: linear-gradient(135deg, #ffffff, #f8fafc);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(8px);
+}
+
+.get-quote-title-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.get-quote-icon-wrapper {
+    width: 50px;
+    height: 50px;
+      background: rgba(16, 56, 24, 0.95);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+}
+
+.get-quote-modal-header h2 {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1e293b;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+}
+
+.get-quote-modal-header p {
+    margin: 4px 0 0 0;
+    color: #64748b;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.get-quote-close-btn {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #64748b;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.get-quote-close-btn:hover {
+     background: rgba(16, 56, 24, 0.95);
+    color: white;
+    border-color:  rgba(16, 56, 24, 0.95);
+    transform: scale(1.05);
+}
+
+.get-quote-modal-form {
+    padding: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.get-quote-form-section {
+    padding: 32px;
+    background: white;
+}
+
+.get-quote-form-section:not(:last-child) {
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.get-quote-section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.get-quote-section-icon {
+    width: 20px;
+    height: 20px;
+    color: #10b981;
+    background: #f0fdf4;
+    padding: 8px;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.get-quote-section-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e293b;
+    letter-spacing: -0.025em;
+}
+
+.get-quote-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.get-quote-form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.get-quote-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.get-quote-form-group label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #374151;
+    letter-spacing: -0.025em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.get-quote-form-group span {
+    color: #dc2626;
+}
+
+.get-quote-form-group input,
+.get-quote-form-group-input-with-icon input,
+.get-quote-form-group select,
+.get-quote-form-group textarea {
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    background: white;
+    color: #1f2937;
+  
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+.get-quote-form-group-input-with-icon input{
+
+    width: 300px;
+}
+
+.get-quote-form-group input:focus,
+.get-quote-form-group select:focus,
+.get-quote-form-group textarea:focus {
+    outline: none;
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    background: #f8fafc;
+}
+
+.get-quote-form-group input.error,
+.get-quote-form-group select.error {
+    border-color: #dc2626;
+}
+
+.get-quote-form-group input.error:focus,
+.get-quote-form-group select.error:focus {
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
+}
+
+.get-quote-form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.get-quote-form-group input::placeholder {
+    color: #94a3b8;
+    font-weight: 400;
+}
+
+.get-quote-input-with-icon {
+    position: relative;
+}
+
+.get-quote-input-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+    width: 18px;
+    height: 18px;
+    pointer-events: none;
+}
+
+.get-quote-input-with-icon input {
+    padding-left: 48px;
+    width: 100%;
+}
+
+.get-quote-modal-actions {
+    padding: 24px 32px;
+    border-top: 1px solid #f1f5f9;
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+    background: #fafbfc;
+    position: sticky;
+    bottom: 0;
+    backdrop-filter: blur(8px);
+}
+
+.get-quote-cancel-btn {
+    padding: 12px 24px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    background: white;
+    color: #475569;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+}
+
+.get-quote-cancel-btn:hover {
+    background: #f8fafc;
+    border-color: #94a3b8;
+    color: #374151;
+    transform: translateY(-1px);
+}
+
+
+
+.get-quote-submit-btn {
+    
+
+  border-radius: 12px;
+  display: flex;
+  padding: 0.8em 2em;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: 'Lexend', sans-serif;
+  cursor: pointer;
+
+  gap: 15px;
+  overflow: hidden;
+
+
+  background: rgba(16, 56, 24, 0.95);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.get-quote-submit-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+}
+
+.get-quote-submit-btn:active {
+    transform: translateY(0);
+}
+
+.get-quote-submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.loading-spinner {
+    width: 18px;
+    height: 18px;
+    border: 2px solid transparent;
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.success-message {
+    padding: 16px;
+    background: #f0fdf4;
+    border: 2px solid #10b981;
+    border-radius: 8px;
+    color: #047857;
+    font-weight: 600;
+    margin: 20px 0;
+    text-align: center;
+    grid-column: 1 / -1;
+}
+
+.error-message {
+    padding: 16px;
+    background: #fef2f2;
+    border: 2px solid #dc2626;
+    border-radius: 8px;
+    color: #dc2626;
+    font-weight: 600;
+    margin: 20px 0;
+    text-align: center;
+    grid-column: 1 / -1;
+}
+
+.error-text {
+    font-size: 0.8rem;
+    color: #dc2626;
+    margin-top: 4px;
+    display: block;
+}
+
+.privacy-note {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 16px;
+    text-align: center;
+    font-style: italic;
+    grid-column: 1 / -1;
+}
+
+
+.get-quote-message-input {
+  min-height: 100px; 
+  padding: 16px 16px 16px 48px;
+  font-size: 1rem;
+  line-height: 1.5;
+  width: 100%;
+  resize: vertical;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: inherit;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  background: white;
+  color: #1f2937;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+
+.get-quote-message-input:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+  background: #f8fafc;
+}
+
+.get-quote-message-input::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+
+  position: static;
+}
+
+.get-quote-modal {
+  max-width: 700px; 
+}
+@keyframes getQuoteModalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .get-quote-modal-overlay {
+        padding: 16px;
+    }
+
+    .get-quote-modal {
+        max-height: 95vh;
+        border-radius: 12px;
+    }
+
+    .get-quote-modal-header {
+        padding: 20px 24px;
+    }
+
+    .get-quote-modal-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .get-quote-form-section {
+        padding: 24px;
+    }
+
+    .get-quote-section-header {
+        margin-bottom: 20px;
+        padding-bottom: 12px;
+    }
+
+    .get-quote-section-header h3 {
+        font-size: 1.125rem;
+    }
+
+    .get-quote-form-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .get-quote-modal-actions {
+        padding: 20px;
+        flex-direction: column-reverse;
+        gap: 12px;
+    }
+
+    .get-quote-cancel-btn,
+    .get-quote-submit-btn {
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 1rem;
+    }
+
+    .get-quote-icon-wrapper {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+@media (max-width: 480px) {
+    .get-quote-modal-overlay {
+        padding: 12px;
+    }
+
+    .get-quote-modal-header h2 {
+        font-size: 1.375rem;
+    }
+
+    .get-quote-section-header h3 {
+        font-size: 1.0625rem;
+    }
+
+    .get-quote-form-group input,
+    .get-quote-form-group select,
+    .get-quote-form-group textarea {
+        padding: 14px;
+        font-size: 16px;
+    }
+
+    .get-quote-modal-header,
+    .get-quote-form-section,
+    .get-quote-modal-actions {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .get-quote-title-section {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .get-quote-icon-wrapper {
+        align-self: center;
+    }
+
+    .get-quote-modal-header {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .get-quote-close-btn {
+        align-self: center;
+    }
+}
+
+.get-quote-modal::-webkit-scrollbar {
+    width: 8px;
+}
+
+.get-quote-modal::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 16px 0;
+}
+
+.get-quote-modal::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+.get-quote-modal::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
