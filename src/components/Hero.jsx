@@ -9,7 +9,7 @@ import {
   FaBolt
 } from "react-icons/fa";
 import "../assets/styles/hero.css";
-import ChickenFeed from "../assets/images/bg/chicken-feed.webp";
+import ChickenFeed from "../assets/images/bg/chicken-feeds.webp";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -105,7 +105,7 @@ const Hero = () => {
               </div>
               <div className="card-content">
                 <strong>Fast Delivery</strong>
-                <span>Nationwide</span>
+    
               </div>
             </div>
           </div>
