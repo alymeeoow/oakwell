@@ -132,6 +132,10 @@
   opacity: 0.95;
 }
 
+ .specialties-right {
+    margin-top: 20px;
+  }
+
 /* Hover effect */
 .box-item:hover {
   transform: translateY(-6px) scale(1.015);
