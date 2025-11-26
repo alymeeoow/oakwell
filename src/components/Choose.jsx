@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import "../assets/styles/choose.css";
 
-import DirectImporterImage from "../assets/images/choose/truck-importer.png";
+import DirectImporterImage from "../assets/images/choose/volvo.png";
 import LabSpecialtyImage from "../assets/images/choose/diag-lab.png";
 import FarmSupportImage from "../assets/images/choose/end-to-end.png";
 import FastShippingImage from "../assets/images/choose/fast-delivery.png";

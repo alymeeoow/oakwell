@@ -1,10 +1,8 @@
 /* ================================
-
-
    SPECIALTIES SECTION
 ==================================*/
 .specialties-section {
-  padding: 120px 0;
+  padding: 80px 0;
   background: linear-gradient(135deg, #f8fbf8 0%, #ffffff 100%);
   font-family: 'Inter', sans-serif;
   position: relative;
@@ -15,53 +13,48 @@
 .specialties-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 24px;
   position: relative;
   z-index: 1;
 }
 
-/* Grid: Left (cards) + Right (title) */
-.specialties-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 80px;
-  align-items: start;
-}
-
 /* ================================
-   LEFT SIDE (CARD GRID)
+   MOBILE & TABLET LAYOUT
 ==================================*/
-.specialties-left {
-  position: relative;
-}
-
-.box-grid-left {
- 
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  position: relative;
-}
-
-/* ================================
-   RIGHT SIDE (TITLE)
-==================================*/
-.specialties-right {
-  padding-top: 20px;
-}
-
-/* Huge Title */
-.specialties-title-large {
-   font-size: clamp(5rem, 6vw, 4rem);
-  font-weight: 900;
-  line-height: 0.9;
-  color: #103818;
+.specialties-top {
+  text-align: center;
   margin-bottom: 40px;
-  letter-spacing: -0.03em;
-  text-align: right;
+}
 
-  word-break: keep-all;
-  white-space: nowrap;
+.specialties-cards {
+  width: 100%;
+}
+
+.box-grid-mobile {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+/* Hide desktop layout on mobile */
+.specialties-grid-desktop {
+  display: none;
+}
+
+/* ================================
+   TITLE STYLING
+==================================*/
+.specialties-title-large {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 900;
+  line-height: 1.1;
+  color: #103818;
+  margin-bottom: 0;
+  letter-spacing: -0.02em;
+  text-align: center;
+  white-space: normal;
 }
 
 .t-logo-wrapper {
@@ -77,29 +70,12 @@
   transform: translateY(0.07em);
 }
 
-@media (max-width: 768px) {
-  .t-logo {
-    width: 0.8em;
-    transform: translateY(3px);
-  }
-}
-
-
-.box-grid-right {
-  margin-top: 150px;
- 
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 25px;
-  max-width: 100%;
-}
-
 /* ================================
    CARD STYLING
 ==================================*/
 .box-item {
   position: relative;
-  height: 280px;
+  height: 240px;
   cursor: pointer;
   opacity: 0;
   transform: translateY(30px);
@@ -107,7 +83,6 @@
 
   background: white;
   border-radius: 16px;
-
   box-shadow:
     0 6px 20px rgba(16, 56, 24, 0.08),
     0 3px 10px rgba(16, 56, 24, 0.05);
@@ -117,7 +92,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 30px;
+  padding: 20px;
 
   border-top: 1px solid rgba(16, 56, 24, 0.05);
 }
@@ -130,19 +105,18 @@
 
 /* Card icon */
 .box-icon {
-  font-size: 32px;
+  font-size: 28px;
   color: #103818;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   transition: all 0.3s ease;
-
   background: rgba(16, 56, 24, 0.05);
-  padding: 20px;
+  padding: 16px;
   border-radius: 50%;
 }
 
 /* Card title */
 .box-content h3 {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: #103818;
   margin-bottom: 12px;
@@ -151,7 +125,7 @@
 
 /* Card text */
 .box-content p {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: #3d5642;
   line-height: 1.5;
   margin-bottom: 15px;
@@ -180,51 +154,21 @@
 .box-item:nth-child(6) { transition-delay: 0.6s; }
 
 /* ================================
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN - TABLET
 ==================================*/
-@media (max-width: 1200px) {
-  .specialties-grid {
-    grid-template-columns: 1fr;
-    gap: 60px;
-  }
-
-  .specialties-right {
-    order: -1;
-    text-align: center;
-  }
-
-  .specialties-title-large {
-    text-align: center;
-    white-space: normal;
-  }
-
-  .box-grid-right {
-    max-width: 600px;
-    margin: 60px auto 0;
-  }
-}
-
-@media (max-width: 1000px) {
-  .box-grid-left {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 600px;
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .specialties-section {
-    padding: 80px 0;
+    padding: 100px 0;
   }
 
   .specialties-container {
-    padding: 0 24px;
+    padding: 0 32px;
   }
 
-  .box-grid-left,
-  .box-grid-right {
-    grid-template-columns: 1fr;
-    max-width: 420px;
+  .box-grid-mobile {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
+    gap: 30px;
   }
 
   .box-item {
@@ -232,28 +176,127 @@
     padding: 25px;
   }
 
-  .box-grid-right {
-    margin-top: 40px;
-  }
-}
-
-@media (max-width: 480px) {
-  .box-item {
-    height: 240px;
+  .box-icon {
+    font-size: 32px;
+    margin-bottom: 20px;
     padding: 20px;
   }
 
-  .box-icon {
-    font-size: 28px;
-    margin-bottom: 15px;
-    padding: 16px;
-  }
-
   .box-content h3 {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .box-content p {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .t-logo {
+    width: 0.8em;
+    transform: translateY(3px);
+  }
+}
+
+/* ================================
+   RESPONSIVE DESIGN - DESKTOP
+==================================*/
+@media (min-width: 1200px) {
+  .specialties-section {
+    padding: 120px 0;
+  }
+
+  .specialties-container {
+    padding: 0 40px;
+  }
+
+  /* Hide mobile layout on desktop */
+  .specialties-top,
+  .specialties-cards {
+    display: none;
+  }
+
+  /* Show desktop layout */
+  .specialties-grid-desktop {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .specialties-left {
+    position: relative;
+  }
+
+  .specialties-right {
+    padding-top: 20px;
+  }
+
+  .box-grid-left {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    position: relative;
+  }
+
+  .box-grid-right {
+    margin-top: 150px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .specialties-title-large {
+    text-align: right;
+    white-space: nowrap;
+    font-size: clamp(3rem, 6vw, 4rem);
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    margin-bottom: 40px;
+  }
+
+  .box-item {
+    height: 280px;
+    padding: 30px;
+  }
+}
+
+/* ================================
+   RESPONSIVE DESIGN - EXTRA SMALL
+==================================*/
+@media (max-width: 360px) {
+  .specialties-section {
+    padding: 60px 0;
+  }
+
+  .specialties-container {
+    padding: 0 16px;
+  }
+
+  .box-grid-mobile {
+    gap: 20px;
+  }
+
+  .box-item {
+    height: 220px;
+    padding: 16px;
+  }
+
+  .box-icon {
+    font-size: 24px;
+    padding: 14px;
+    margin-bottom: 12px;
+  }
+
+  .box-content h3 {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+  }
+
+  .box-content p {
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+  }
+
+  .specialties-title-large {
+    font-size: 2rem;
   }
 }
