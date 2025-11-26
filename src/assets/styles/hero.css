@@ -31,8 +31,9 @@ body {
 .hero-section {
   position: relative;
   min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height for mobile */
   width: 100%;
-  padding: clamp(1rem, 3vw, 2rem);
+  padding: clamp(0.75rem, 3vw, 2rem);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,7 +41,8 @@ body {
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding-top: clamp(5rem, 12vw, 8rem);
+  padding-top: clamp(4rem, 12vw, 8rem);
+  padding-bottom: clamp(2rem, 8vw, 4rem);
   background: linear-gradient(135deg, #f5f3f0 0%, #e8e4df 50%, #f0ece7 100%);
 }
 
@@ -118,7 +120,7 @@ body {
   position: relative;
   z-index: 3;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: clamp(2rem, 5vw, 4rem);
   align-items: center;
   opacity: 0;
@@ -140,6 +142,8 @@ body {
   justify-content: center;
   max-width: 100%;
   width: 100%;
+  text-align: center;
+  order: 2; /* Move content below image on mobile */
 }
 
 /* ============================================
@@ -180,9 +184,9 @@ body {
 .title-highlight::after {
   content: "";
   position: absolute;
-  left: 0;
+  left: 15%; /* Center the underline more on mobile */
   bottom: clamp(-4px, -1vw, -6px);
-  width: 72%;
+  width: 70%; /* Adjust width for mobile */
   height: clamp(3px, 0.5vw, 4px);
   border-radius: 3px;
   background: linear-gradient(90deg, #10b981 0%, rgba(16, 185, 129, 0.4) 70%, transparent 100%);
@@ -204,10 +208,11 @@ body {
 .subtitle {
   font-size: clamp(0.9rem, 2.2vw, 1.15rem);
   color: #4b604f;
-  line-height: 1.7;
+  line-height: 1.6; /* Slightly tighter line height for mobile */
   margin-bottom: clamp(1.2rem, 3vw, 1.6rem);
   max-width: 100%;
   font-weight: 500;
+  padding: 0 clamp(0.5rem, 2vw, 1rem); /* Add padding on mobile */
 }
 
 /* ============================================
@@ -230,7 +235,7 @@ body {
     0 0 20px rgba(16, 185, 129, 0.1);
   width: fit-content;
   white-space: nowrap;
-  margin-bottom: 1rem;
+  margin: 0 auto 1rem auto; /* Center on mobile */
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
   animation: badgePulse 4s ease-in-out infinite;
@@ -289,6 +294,9 @@ body {
   gap: clamp(0.6rem, 2vw, 0.85rem);
   margin: clamp(1rem, 2.5vw, 1.2rem) 0;
   width: 100%;
+  max-width: 400px; /* Limit width on mobile */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .feature-card {
@@ -387,6 +395,7 @@ body {
 .feature-content {
   flex: 1;
   min-width: 0;
+  text-align: left; /* Keep content left-aligned within cards */
 }
 
 .feature-content h4 {
@@ -417,6 +426,7 @@ body {
   gap: clamp(0.8rem, 2vw, 1rem);
   flex-wrap: wrap;
   margin-top: clamp(1.2rem, 3vw, 1.4rem);
+  justify-content: center; /* Center buttons on mobile */
 }
 
 .cta-btn-primary,
@@ -431,6 +441,8 @@ body {
   gap: clamp(0.5rem, 1.5vw, 0.6rem);
   justify-content: center;
   min-width: clamp(140px, 20vw, 160px);
+  flex: 1; /* Allow buttons to grow on mobile */
+  max-width: 200px; /* But limit maximum width */
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   border: none;
   text-decoration: none;
@@ -563,19 +575,21 @@ body {
   align-items: center;
   width: 100%;
   position: relative;
+  order: 1; /* Move image above content on mobile */
+  margin-top: 0; /* Default for desktop */
 }
 
 .image-container {
   position: relative;
   display: inline-block;
   width: 100%;
-  max-width: 380px;
+  max-width: min(380px, 90vw); /* More responsive max-width */
   margin: 0 auto;
 }
 
 .image-glow {
   position: absolute;
-  inset: -15%;
+  inset: -10%; /* Reduced glow on mobile */
   border-radius: clamp(1.5rem, 3vw, 2rem);
   background: radial-gradient(
     circle,
@@ -585,7 +599,7 @@ body {
   );
   z-index: 1;
   animation: glowPulse 4s ease-in-out infinite;
-  filter: blur(20px);
+  filter: blur(15px); /* Reduced blur on mobile */
 }
 
 @keyframes glowPulse {
@@ -657,14 +671,14 @@ body {
 }
 
 .card-1 {
-  top: 12%;
-  right: -40%;
+  top: 8%; /* Adjusted for mobile */
+  right: -5%; /* Brought closer on mobile */
   animation-delay: 0s;
 }
 
 .card-2 {
-  bottom: 18%;
-  left: -30%;
+  bottom: 10%; /* Adjusted for mobile */
+  left: -5%; /* Brought closer on mobile */
   animation-delay: 1s;
 }
 
@@ -774,5 +788,192 @@ a:focus-visible {
   }
 }
 
+/* ============================================
+   MOBILE-SPECIFIC STYLES
+   ============================================ */
 
+/* Mobile devices - Move image down by 70px */
+@media (max-width: 767px) {
+  .hero-image {
+    margin-top: 70px; /* Move image down by 70px for header clearance */
+  }
+  
+  .hero-container {
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+  }
+}
 
+/* Tablet and larger mobile devices */
+@media (min-width: 768px) {
+  .hero-container {
+    margin-top: 100px;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 5vw, 4rem);
+  }
+  
+  .hero-content {
+    text-align: left;
+    order: 1; /* Reset order for desktop */
+  }
+  
+  .premium-badge {
+    margin: 0 0 1rem 0; /* Reset margin for desktop */
+  }
+  
+  .features-grid {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .cta-group {
+    justify-content: flex-start; /* Reset alignment for desktop */
+  }
+  
+  .hero-image {
+    order: 2; /* Reset order for desktop */
+    margin-top: 0; /* Reset margin for desktop */
+  }
+  
+  .card-1 {
+    top: 12%;
+    right: -40%;
+  }
+  
+  .card-2 {
+    bottom: 18%;
+    left: -30%;
+  }
+  
+  .image-glow {
+    inset: -15%;
+    filter: blur(20px);
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .hero-section {
+    padding-top: clamp(3rem, 10vw, 5rem);
+    padding-bottom: clamp(1.5rem, 6vw, 3rem);
+    min-height: auto; /* Allow natural height on very small screens */
+  }
+  
+  .hero-image {
+    margin-top: 70px; /* Maintain 70px spacing on small mobile */
+  }
+  
+  .hero-container {
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+  }
+  
+  .hero-title {
+    margin: clamp(0.5rem, 1.5vw, 0.75rem) 0;
+  }
+  
+  .title-highlight::after {
+    left: 10%;
+    width: 80%;
+  }
+  
+  .features-grid {
+    gap: clamp(0.5rem, 1.5vw, 0.7rem);
+  }
+  
+  .feature-card {
+    padding: clamp(0.7rem, 1.8vw, 0.85rem) clamp(0.9rem, 2.2vw, 1rem);
+    min-height: clamp(55px, 8vw, 60px);
+  }
+  
+  .cta-group {
+    flex-direction: column; /* Stack buttons vertically on very small screens */
+    align-items: center;
+  }
+  
+  .cta-btn-primary,
+  .cta-btn-secondary {
+    flex: none;
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .floating-card {
+    min-width: clamp(100px, 18vw, 120px);
+    padding: clamp(0.6rem, 1.8vw, 0.8rem) clamp(0.7rem, 1.8vw, 0.9rem);
+  }
+  
+  .card-1 {
+    top: 5%;
+    right: -2%;
+  }
+  
+  .card-2 {
+    bottom: 8%;
+    left: -2%;
+  }
+  
+  .card-content strong {
+    font-size: clamp(0.75rem, 1.6vw, 0.85rem);
+  }
+  
+  .card-content span {
+    font-size: clamp(0.65rem, 1.4vw, 0.75rem);
+  }
+}
+
+/* Very small mobile devices (landscape) */
+@media (max-width: 480px) and (max-height: 600px) {
+  .hero-section {
+    min-height: 100vh; /* Ensure full height even in landscape */
+    padding-top: clamp(2rem, 8vw, 4rem);
+  }
+  
+  .hero-image {
+    margin-top: 80px; /* Reduce spacing in landscape mode */
+  }
+  
+  .hero-container {
+    gap: clamp(1rem, 3vw, 2rem);
+  }
+  
+  .features-grid {
+    margin: clamp(0.5rem, 2vw, 1rem) 0;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .feature-card:hover {
+    transform: none;
+  }
+  
+  .cta-btn-primary:hover,
+  .cta-btn-secondary:hover {
+    transform: none;
+  }
+  
+  .hero-image-main:hover {
+    transform: none;
+  }
+  
+  .floating-card:hover {
+    transform: none;
+  }
+  
+  /* Add active states for touch devices */
+  .feature-card:active {
+    transform: scale(0.98);
+  }
+  
+  .cta-btn-primary:active,
+  .cta-btn-secondary:active {
+    transform: scale(0.98);
+  }
+}
+
+/* High-resolution displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .grain-overlay {
+    opacity: 0.02; /* Slightly reduce grain on retina displays */
+  }
+}
