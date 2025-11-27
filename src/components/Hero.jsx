@@ -10,7 +10,7 @@ import {
 } from "react-icons/fa";
 import { useNavigate, useLocation } from "react-router-dom";
 import "../assets/styles/hero.css";
-import ChickenFeed from "../assets/images/bg/chicken-feeds.webp";
+import ChickenFeed from "../assets/images/bg/chick-feed-oak.jpg";
 
 const Hero = ({ openQuoteForm }) => {
   const [isVisible, setIsVisible] = useState(false);
