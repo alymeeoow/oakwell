@@ -24,8 +24,7 @@ body.modal-open {
     justify-content: center;
     z-index: 1000;
     padding: 12px;
-    /* Safe area support for taller phones */
-    padding-top: max(12px, env(safe-area-inset-top, 12px));
+        padding-top: max(12px, env(safe-area-inset-top, 12px));
     padding-bottom: max(12px, env(safe-area-inset-bottom, 12px));
     padding-left: max(12px, env(safe-area-inset-left, 12px));
     padding-right: max(12px, env(safe-area-inset-right, 12px));
@@ -37,8 +36,7 @@ body.modal-open {
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
     width: 100%;
     max-width: 600px;
-    /* Reduced max-height for taller screens */
-    max-height: 85vh;
+        max-height: 85vh;
     overflow: hidden;
     overflow-y: auto;
     animation: getQuoteModalSlideIn 0.3s ease-out;
@@ -46,8 +44,7 @@ body.modal-open {
     position: relative;
     border: 1px solid #e5e7eb;
     margin: 0 auto;
-    /* Ensure it doesn't touch edges */
-    min-height: auto;
+        min-height: auto;
 }
 
 .get-quote-modal-header {
@@ -61,8 +58,7 @@ body.modal-open {
     top: 0;
     z-index: 10;
     backdrop-filter: blur(8px);
-    /* Reduced padding for mobile */
-}
+    }
 
 .get-quote-title-section {
     display: flex;
@@ -132,8 +128,7 @@ body.modal-open {
     z-index: 1;
     display: flex;
     flex-direction: column;
-    /* Use min-height instead of fixed height */
-    min-height: 0;
+        min-height: 0;
 }
 
 .get-quote-form-section {
@@ -141,8 +136,7 @@ body.modal-open {
     background: white;
     flex: 1;
     overflow-y: auto;
-    /* Reduced padding for mobile */
-}
+    }
 
 .get-quote-form-section:not(:last-child) {
     border-bottom: 1px solid #f1f5f9;
@@ -420,7 +414,6 @@ body.modal-open {
     }
 }
 
-/* Tablet and Desktop Styles */
 @media (min-width: 768px) {
     .get-quote-modal-overlay {
         padding: 20px;
@@ -514,7 +507,6 @@ body.modal-open {
     }
 }
 
-/* Extra small devices and taller phones */
 @media (max-width: 480px) and (max-height: 800px) {
     .get-quote-modal-overlay {
         padding: 8px;
@@ -539,7 +531,6 @@ body.modal-open {
     }
 }
 
-/* Very tall screens (like Infinix Note 30) */
 @media (max-height: 700px) {
     .get-quote-modal {
         max-height: 80vh;
@@ -552,7 +543,6 @@ body.modal-open {
     }
 }
 
-/* Prevent zoom on iOS input focus */
 @media (max-width: 768px) {
     .get-quote-form-group input,
     .get-quote-form-group select,

@@ -335,7 +335,6 @@
   transform: translateY(-2px);
 }
 
-/* Main Content */
 .shop-content {
   max-width: 1280px;
   margin: 0 auto;
@@ -701,7 +700,6 @@
   border-color: #059669;
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
   .products-grid {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));

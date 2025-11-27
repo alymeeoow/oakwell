@@ -10,12 +10,13 @@ import Testing2 from './components/Testing';
 import Choose2 from './components/Choose';
 import Shop2 from './components/Shop';
 import Footer2 from './components/Footer';
+import GetQuoteModal from './components/requestQuoteForm';
 
-function HomePage({  }) {
+function HomePage({ openQuoteForm, openContactForm }) {
   return (
     <>
-      <Header2/>
-      <Hero2 />
+      <Header2 openQuoteForm={openQuoteForm} />
+      <Hero2 openQuoteForm={openQuoteForm} />
       <Specialties2 />
       <About2/>
       <Products2 />
@@ -31,9 +32,10 @@ function App() {
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
 
   const openQuoteForm = () => setIsQuoteFormOpen(true);
+  const closeQuoteForm = () => setIsQuoteFormOpen(false);
   
   const openContactForm = () => setIsContactFormOpen(true);
- 
+  const closeContactForm = () => setIsContactFormOpen(false);
 
   return (
     <BrowserRouter>
@@ -48,9 +50,20 @@ function App() {
           } 
         />
         <Route path="/shop" element={<Shop2 />} />
-     
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
+      
+      {/* Quote Modal */}
+      <GetQuoteModal 
+        isOpen={isQuoteFormOpen} 
+        onClose={closeQuoteForm} 
+      />
+      
+      {/* Add Contact Modal here if you have one */}
+      {/* <ContactModal 
+        isOpen={isContactFormOpen} 
+        onClose={closeContactForm} 
+      /> */}
     </BrowserRouter>
   );
 }

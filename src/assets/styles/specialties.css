@@ -1,6 +1,3 @@
-/* ================================
-   SPECIALTIES SECTION
-==================================*/
 .specialties-section {
   padding: 80px 0;
   background: linear-gradient(135deg, #f8fbf8 0%, #ffffff 100%);
@@ -9,7 +6,6 @@
   overflow: hidden;
 }
 
-/* Container */
 .specialties-container {
   max-width: 1400px;
   margin: 0 auto;
@@ -18,9 +14,6 @@
   z-index: 1;
 }
 
-/* ================================
-   MOBILE & TABLET LAYOUT
-==================================*/
 .specialties-top {
   text-align: center;
   margin-bottom: 40px;
@@ -38,14 +31,10 @@
   margin: 0 auto;
 }
 
-/* Hide desktop layout on mobile */
 .specialties-grid-desktop {
   display: none;
 }
 
-/* ================================
-   TITLE STYLING
-==================================*/
 .specialties-title-large {
   font-size: clamp(2.5rem, 8vw, 4rem);
   font-weight: 900;
@@ -70,9 +59,6 @@
   transform: translateY(0.07em);
 }
 
-/* ================================
-   CARD STYLING
-==================================*/
 .box-item {
   position: relative;
   height: 240px;
@@ -97,13 +83,11 @@
   border-top: 1px solid rgba(16, 56, 24, 0.05);
 }
 
-/* Animation trigger */
 .specialties-section.visible .box-item.animate-in {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Card icon */
 .box-icon {
   font-size: 28px;
   color: #103818;
@@ -114,7 +98,6 @@
   border-radius: 50%;
 }
 
-/* Card title */
 .box-content h3 {
   font-size: 0.9rem;
   font-weight: 700;
@@ -123,7 +106,6 @@
   line-height: 1.3;
 }
 
-/* Card text */
 .box-content p {
   font-size: 0.8rem;
   color: #3d5642;
@@ -157,9 +139,6 @@
 .box-item:nth-child(5) { transition-delay: 0.5s; }
 .box-item:nth-child(6) { transition-delay: 0.6s; }
 
-/* ================================
-   RESPONSIVE DESIGN - TABLET
-==================================*/
 @media (min-width: 768px) {
   .specialties-section {
     padding: 100px 0;
@@ -200,9 +179,6 @@
   }
 }
 
-/* ================================
-   RESPONSIVE DESIGN - DESKTOP
-==================================*/
 @media (min-width: 1200px) {
   .specialties-section {
     padding: 120px 0;
@@ -212,14 +188,12 @@
     padding: 0 40px;
   }
 
-  /* Hide mobile layout on desktop */
-  .specialties-top,
+    .specialties-top,
   .specialties-cards {
     display: none;
   }
 
-  /* Show desktop layout */
-  .specialties-grid-desktop {
+    .specialties-grid-desktop {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
     gap: 80px;
@@ -263,9 +237,6 @@
   }
 }
 
-/* ================================
-   RESPONSIVE DESIGN - EXTRA SMALL
-==================================*/
 @media (max-width: 360px) {
   .specialties-section {
     padding: 60px 0;

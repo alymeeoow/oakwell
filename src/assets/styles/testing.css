@@ -52,7 +52,6 @@
   opacity: 0.9;
 }
 
-/* Grid - 3 cards top row, 2 cards bottom row with adjusted widths */
 .testing-grid-organized {
   display: grid;
   grid-template-columns: repeat(3, minmax(280px, 1fr));

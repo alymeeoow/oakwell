@@ -77,8 +77,7 @@ const About = () => {
           </div>
 
           <div className="about-right">
-            {/* Simple Features Grid */}
-            <div className="about-features-simple">
+                        <div className="about-features-simple">
               {features.map((item, index) => (
                 <div className="about-feature-simple-card" key={index}>
                   <div className="about-feature-simple-icon">{item.icon}</div>
@@ -90,8 +89,7 @@ const About = () => {
               ))}
             </div>
 
-            {/* Mission Card - Fixed image margins */}
-            <div className="about-philosophy-card">
+                        <div className="about-philosophy-card">
               <img
                 src={Hen}
                 alt="Farm Mission"

@@ -142,8 +142,7 @@
             margin: 0;
         }
 
-        /* Tablet Styles */
-        @media (min-width: 768px) {
+                @media (min-width: 768px) {
             .about-section {
                 padding: 100px 0;
             }
@@ -212,8 +211,7 @@
             }
         }
 
-        /* Desktop Styles */
-        @media (min-width: 1000px) {
+                @media (min-width: 1000px) {
             .about-section {
                 padding: 120px 0;
             }
@@ -269,8 +267,7 @@
             }
         }
 
-        /* Extra Small Devices */
-        @media (max-width: 360px) {
+                @media (max-width: 360px) {
             .about-section {
                 padding: 60px 0;
             }

@@ -67,16 +67,14 @@ const Products = () => {
       </div>
       
       <div className="product-category-container">
-        {/* Centered Title at Top */}
-        <div className="product-category-header-centered">
+                <div className="product-category-header-centered">
           <h2 className="product-category-title-main">
             <span>PRODUCT CATEGORIES</span>
           
           </h2>
         </div>
 
-        {/* Single Row Cards */}
-        <div className="product-category-grid-single">
+                <div className="product-category-grid-single">
           {productCategories.map((category, index) => (
             <div 
               className="product-category-card" 

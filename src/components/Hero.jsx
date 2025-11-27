@@ -8,15 +8,47 @@ import {
   FaStar,
   FaBolt
 } from "react-icons/fa";
+import { useNavigate, useLocation } from "react-router-dom";
 import "../assets/styles/hero.css";
 import ChickenFeed from "../assets/images/bg/chicken-feeds.webp";
 
-const Hero = () => {
+const Hero = ({ openQuoteForm }) => {
   const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  const handleShopClick = () => {
+    navigate('/shop');
+  };
+
+  const handleRequestQuote = () => {
+    if (openQuoteForm) {
+      openQuoteForm();
+    } else {
+      console.log("openQuoteForm function not provided");
+    }
+  };
+
+  const handleSectionClick = (sectionId) => {
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <section className="hero-section">
@@ -69,11 +101,11 @@ const Hero = () => {
           </div>
 
           <div className="cta-group">
-            <button className="cta-btn-primary">
+            <button className="cta-btn-primary" onClick={handleShopClick}>
               <FaShoppingCart className="btn-icon" />
               Shop Products
             </button>
-            <button className="cta-btn-secondary">
+            <button className="cta-btn-secondary" onClick={handleRequestQuote}>
               <FaCommentAlt className="btn-icon" />
               Request Quote
             </button>
@@ -105,7 +137,6 @@ const Hero = () => {
               </div>
               <div className="card-content">
                 <strong>Fast Delivery</strong>
-    
               </div>
             </div>
           </div>

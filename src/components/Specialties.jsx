@@ -52,8 +52,7 @@ const Specialties = () => {
   return (
     <section className={`specialties-section ${isVisible ? "visible" : ""}`}>
       <div className="specialties-container">
-        {/* Mobile & Tablet Layout: Title on top */}
-        <div className="specialties-top">
+                <div className="specialties-top">
           <h1 className="specialties-title-large">
             OUR <br />
             SPECIAL<span className="t-logo-wrapper">
@@ -62,8 +61,7 @@ const Specialties = () => {
           </h1>
         </div>
 
-        {/* Cards Section */}
-        <div className="specialties-cards">
+                <div className="specialties-cards">
           <div className="box-grid-mobile">
             {specialties.map((specialty, index) => (
               <div 
@@ -83,8 +81,7 @@ const Specialties = () => {
           </div>
         </div>
 
-        {/* Desktop Layout (hidden on mobile) */}
-        <div className="specialties-grid-desktop">
+                <div className="specialties-grid-desktop">
           <div className="specialties-left">
             <div className="box-grid-left">
               {specialties.slice(0, 4).map((specialty, index) => (

@@ -1,14 +1,15 @@
+@import "tailwindcss";
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Prevent horizontal overflow */
 html, body {
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden; /* This prevents horizontal scrolling */
+  overflow-x: hidden; 
 }
 
 body {
@@ -20,25 +21,25 @@ body {
 #root {
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden; /* Additional safety */
+  overflow-x: hidden; 
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-/* Ensure all containers don't cause overflow */
+
 .container, section, div {
   max-width: 100%;
 }
 
-/* Specific fixes for common culprits */
+
 img, video, iframe, canvas, svg {
   max-width: 100%;
   height: auto;
 }
 
-/* Prevent text from causing overflow */
+
 p, h1, h2, h3, h4, h5, h6 {
   word-wrap: break-word;
   overflow-wrap: break-word;

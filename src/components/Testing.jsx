@@ -76,8 +76,7 @@ const TestingServices = () => {
   return (
     <section className={`testing-services-section ${isVisible ? "visible" : ""}`} id="testing">
       <div className="testing-container">
-        {/* Centered Header */}
-        <div className="testing-header-centered">
+                <div className="testing-header-centered">
           <h2 className="testing-title-main">
           TESTING SERVICES
           
@@ -85,8 +84,7 @@ const TestingServices = () => {
           
         </div>
 
-        {/* Organized 5-Card Grid */}
-        <div className="testing-grid-organized">
+                <div className="testing-grid-organized">
           {testingServices.map((service, index) => (
             <div 
               className="testing-service-card" 
