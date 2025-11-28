@@ -8,11 +8,11 @@ import {
 } from "react-icons/fa";
 import "../assets/styles/testing.css";
 
-import AvianTestingImage from "../assets/images/testing/swab.jpg";
-import NewcastleTestingImage from "../assets/images/testing/electron-micro-graph.png";
-import SalmonellaTestingImage from "../assets/images/testing/salmonella.png";
-import EnvironmentalTestingImage from "../assets/images/testing/environment.jpg";
-import MultiPathogenImage from "../assets/images/testing/screening.jpg";
+import AvianTestingImage from "../assets/images/testing/avian-test.png";
+import NewcastleTestingImage from "../assets/images/testing/new-catle-1.png";
+import SalmonellaTestingImage from "../assets/images/testing/e-coli.png";
+import EnvironmentalTestingImage from "../assets/images/testing/env-testing.png";
+import MultiPathogenImage from "../assets/images/testing/micro.png";
 
 const testingServices = [
   {
