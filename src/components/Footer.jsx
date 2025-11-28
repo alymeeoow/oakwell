@@ -16,6 +16,10 @@ const Footer = () => {
     }
   };
 
+  const handleAddressClick = () => {
+    window.open('https://maps.google.com/?q=7791+NW+46+Street+Suite+218+Doral+Florida+33166', '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <footer className="footer-oak">
       <div className="footer-container-oak">
@@ -54,6 +58,16 @@ const Footer = () => {
               <a href="mailto:info@oakwelldistribution.com" className="footer-link-oak">info@oakwelldistribution.com</a>
               <a href="tel:+15551234567" className="footer-link-oak">+1 (555) 123-4567</a>
               <span className="footer-link-oak">Nationwide Shipping</span>
+            </div>
+
+            <div className="footer-column-oak">
+              <h4 className="footer-title-oak">Address</h4>
+              <button className="footer-link-oak footer-address-link" onClick={handleAddressClick}>
+                <span className="address-text">
+                  7791 N.W. 46 Street, Suite 218<br />
+                  Doral, Florida 33166
+                </span>
+              </button>
             </div>
           </div>
         </div>
