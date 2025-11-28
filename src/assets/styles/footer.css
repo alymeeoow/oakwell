@@ -60,8 +60,8 @@
 
 .footer-links-oak {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 55px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
 }
 
 .footer-column-oak {
@@ -99,6 +99,31 @@
 
 .footer-link-oak:hover::before {
   width: 10px;
+}
+
+/* Address Link Specific Styles */
+.footer-address-link {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 7px 0;
+  transition: all 0.25s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.97rem;
+}
+
+.footer-address-link:hover {
+  color: #34d399;
+  transform: translateX(10px);
+}
+
+.address-text {
+  line-height: 1.5;
+  font-size: 0.97rem;
 }
 
 .footer-bottom-oak {
@@ -140,6 +165,13 @@
 
 /* ------- Responsive Breakpoints ------- */
 
+@media (max-width: 1120px) {
+  .footer-links-oak {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+  }
+}
+
 @media (max-width: 980px) {
   .footer-main-oak {
     grid-template-columns: 1fr;
@@ -179,6 +211,10 @@
   .footer-bottom-oak {
     flex-direction: column;
     text-align: center;
+  }
+
+  .footer-address-link {
+    text-align: left;
   }
 }
 
