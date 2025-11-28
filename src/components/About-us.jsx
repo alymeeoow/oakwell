@@ -7,8 +7,8 @@ import {
 } from "react-icons/fa";
 import "../assets/styles/about.css";
 
-import Silo from "../assets/images/about/silo.jpg";
-import Hen from "../assets/images/about/hens.png";
+import Silo from "../assets/images/about/silo.png";
+import Hen from "../assets/images/about/hens-ai.png";
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);

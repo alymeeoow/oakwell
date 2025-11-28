@@ -9,7 +9,7 @@ import "../assets/styles/products.css";
 
 import PoultryBiosecurityImage from "../assets/images/products/poultry-security.png";
 import LabSuppliesImage from "../assets/images/products/laboratory.png";
-import FeedIngredientsImage from "../assets/images/products/chick-chick.jpg";
+import FeedIngredientsImage from "../assets/images/products/pellets.png";
 import FarmSuppliesImage from "../assets/images/products/supplies.jpg";
 
 const productCategories = [
