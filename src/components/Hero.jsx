@@ -10,7 +10,7 @@ import {
 } from "react-icons/fa";
 import { useNavigate, useLocation } from "react-router-dom";
 import "../assets/styles/hero.css";
-import ChickenFeed from "../assets/images/bg/chicken-feeds.webp";
+import ChickenFeed from "../assets/images/bg/chicken-feeds.png";
 
 const Hero = ({ openQuoteForm }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -137,6 +137,7 @@ const Hero = ({ openQuoteForm }) => {
               </div>
               <div className="card-content">
                 <strong>Fast Delivery</strong>
+                <span>Nation Wide</span>
               </div>
             </div>
           </div>

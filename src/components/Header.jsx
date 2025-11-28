@@ -3,9 +3,9 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import "../assets/styles/header.css";
 import GetQuoteModal from "./requestQuoteForm";
 
-import OakwellLogo from "../assets/images/logos/logo.png"
-import OakwellLogoWord from "../assets/images/logos/nameOnly.png"
-
+import OakwellLogo from "../assets/images/logos/logo1.png"
+import OakwellLogoWord from "../assets/images/logos/nameOnly1.png"
+1
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false); 
