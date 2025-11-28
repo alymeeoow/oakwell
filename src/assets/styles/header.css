@@ -167,12 +167,12 @@
     flex-direction: column;
     position: absolute;
     top: 100%;
+
     left: 0;
     width: 100%;
     background: rgba(235, 229, 216, 0.98);
-    backdrop-filter: blur(20px) saturate(180%);
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
-    padding: 20px 0;
+  
+    
     text-align: center;
     gap: 0;
     border-top: 1px solid rgba(255, 255, 255, 0.3);
@@ -194,7 +194,12 @@
 
   .nav-link-oak:last-child {
     border-bottom: none;
+
   }
+  .get-quote-btn{
+    margin-bottom: 10px;
+  }
+
 
   .nav-link-oak::after {
     display: none;
@@ -203,6 +208,13 @@
   .logo-container-oak img,
   .left-side-oak {
     height: 35px;
+  }
+
+
+  #about,
+  #products,
+  #testing {
+    scroll-margin-top: 80px;
   }
 }
 
@@ -231,5 +243,21 @@
     padding: 12px 15px;
     font-size: 0.9rem;
     margin: 0 10px;
+  }
+
+
+  #about,
+  #products,
+  #testing {
+    scroll-margin-top: 70px;
+  }
+}
+
+
+@media (min-width: 769px) {
+  #about,
+  #products,
+  #testing {
+    scroll-margin-top: 20px;
   }
 }
